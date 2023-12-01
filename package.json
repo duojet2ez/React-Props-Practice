@@ -4,7 +4,8 @@
   "description": "",
   "main": "./server/app.js",
   "scripts": {
-    "start": "node server/app.js"
+    "start": "node server/app.js",
+    "build": "webpack"
   },
   "author": "Eric Pratt",
   "license": "ISC",
@@ -22,3 +23,5 @@
     "webpack-dev-server": "^4.15.1"
   }
 }
+
+

@@ -4,7 +4,7 @@ import {useState} from "react";
 export default function App(){
     return(
         <div>
-            <p1> Hi i am a moron HAHAHAHAHAHAH HEHEHEHEHEHEHE  </p1>
+            <p1> This is a test. Does it work??  </p1>
         </div>
     )
 }
