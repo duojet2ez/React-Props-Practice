@@ -5,8 +5,8 @@ const fs = require('fs');
 const hostname = '127.0.0.1';
 const port = 3000;
  
-const homePage = readFileSync('../public/index.html');
-const scriptLoad = readFileSync('../dist/main.js'); 
+const homePage = readFileSync('./public/index.html');
+const scriptLoad = readFileSync('./dist/main.js'); 
 
 const server = http.createServer((req, res) => {
     const url = req.url
