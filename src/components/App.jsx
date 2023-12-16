@@ -5,19 +5,23 @@ import Card from "./Card.jsx";
 import data from "../assets/scripts/utils/data.js"
 
 export default function App(){
-    console.log(data[0]);
+    const cards = data.map(item => {
+        return (
+            <Card 
+                img={item.coverImg}
+                rating={item.rating}
+                reviewCount={item.reviewCount}
+                country={item.country}
+                title={item.title}
+                price={item.price}
+            />
+        )
+    })
     return(
         <div>
             <Navbar />
             <Hero />
-            <Card
-                img = "../assets/images/katie.png"
-                rating = "5.0"
-                reviewCount = {6}
-                country = "USA"
-                title = "Life Lessons with Katie Zaferes"
-                price = {138}
-            />
+            {cards}
         </div>
     )
 }
