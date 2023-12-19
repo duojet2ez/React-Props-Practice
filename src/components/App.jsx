@@ -8,6 +8,7 @@ export default function App(){
     const cards = data.map(item => {
         return (
             <Card 
+                key={item.id} //need this when using map function some sort of unique id per item
                 img={item.coverImg}
                 rating={item.rating}
                 reviewCount={item.reviewCount}
@@ -20,8 +21,9 @@ export default function App(){
     return(
         <div>
             <Navbar />
-            <Hero />
-            {cards}
+            <section className="cards-list">
+                {cards}
+            </section>
         </div>
     )
 }
