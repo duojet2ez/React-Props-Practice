@@ -5,6 +5,7 @@ export default function Card(props){
     return (
         <>
         <div className="card">
+            <div className="card--badge"> SOLD OUT </div>
             <img src={props.img}></img>
             <div className="card--stats">
                 <img src="../assets/images/star.png" className="card--star"></img>
