@@ -9,13 +9,7 @@ export default function App(){
         return (
             <Card 
                 key={item.id} //need this when using map function some sort of unique id per item
-                img={item.coverImg}
-                rating={item.rating}
-                reviewCount={item.reviewCount}
-                country={item.location}
-                title={item.title}
-                price={item.price}
-                openSpots={item.openSpots}
+                item={item}
             />
         )
     })

@@ -2,26 +2,28 @@ import React from "react"
 
 
 export default function Card(props){
+    const itemData = props.item;
+    console.log(itemData);
     let badgeText;
-    if(props.openSpots === 0){
+    if(itemData.openSpots === 0){
         badgeText = "SOLD OUT"
     }
-    else if(props.country === "Online"){
+    else if(itemData.location === "Online"){
         badgeText = "ONLINE";
     }
     return (
         <>
         <div className="card">
             {badgeText && <div className="card--badge"> {badgeText} </div>}
-            <img src={props.img}></img>
+            <img src={itemData.coverImg}></img>
             <div className="card--stats">
                 <img src="../assets/images/star.png" className="card--star"></img>
-                <span>{props.rating}</span>
-                <span className="gray">({props.reviewCount}) • </span>
-                <span className="gray">{props.country}</span>
+                <span>{itemData.stats.rating}</span>
+                <span className="gray">({itemData.stats.reviewCount}) • </span>
+                <span className="gray">{itemData.location}</span>
             </div>
-            <p>{props.title}</p>
-            <p><span className="bold">From ${props.price} </span> / person</p>
+            <p>{itemData.title}</p>
+            <p><span className="bold">From ${itemData.price} </span> / person</p>
         </div>
         </> 
     )
