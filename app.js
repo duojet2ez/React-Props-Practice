@@ -1,18 +1,28 @@
-const http = require('http');
-const {readFileSync} = require('fs'); 
-const fs = require('fs');  
 const express = require('express');
-
-const hostname = '127.0.0.1';
+const app = express();
+const path = require('path');
 const port = 3000;
+
+app.use(express.static('public'));
+app.use(express.static('src'));
+app.use(express.static('dist'));
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
+
+/*
+const hostname = '127.0.0.1';
+
  
 const homePage = readFileSync('./public/index.html');
 const scriptLoad = readFileSync('./dist/main.js'); 
 const style = readFileSync('./src/assets/styles/style.css'); 
-const airbnbLogo = readFileSync('./src/assets/images/airbnb1.png'); 
-const photoGrid = readFileSync('./src/assets/images/photo-grid.png'); 
-const katiePhoto = readFileSync('./src/assets/images/katie.png');
-const starPhoto = readFileSync('./src/assets/images/star.png');
+const airbnbLogo = readFileSync('./public/assets/images/airbnb1.png'); 
+const photoGrid = readFileSync('./public/assets/images/photo-grid.png'); 
+const katiePhoto = readFileSync('./public/assets/images/katie.png');
+const starPhoto = readFileSync('./public/assets/images/star.png');
+
 
 const server = http.createServer((req, res) => {
     const url = req.url
@@ -34,25 +44,25 @@ const server = http.createServer((req, res) => {
         res.write(scriptLoad);
         res.end();
     }
-    else if(url === '/assets/images/airbnb1.png'){
+    else if(url === '/public/assets/images/airbnb1.png'){
         console.log('logo image found'); 
         res.writeHead(200, {'content-type':'image/png'});
         res.write(airbnbLogo);
         res.end(); 
     }
-    else if(url === '/assets/images/photo-grid.png'){
+    else if(url === '/public/assets/images/photo-grid.png'){
         console.log('photo grid image found'); 
         res.writeHead(200, {'content-type':'image/png'});
         res.write(photoGrid);
         res.end(); 
     }
-    else if(url === '/assets/images/katie.png'){
+    else if(url === '/public/assets/images/katie.png'){
         console.log('katie image found'); 
         res.writeHead(200, {'content-type':'image/png'});
         res.write(katiePhoto);
         res.end(); 
     }
-    else if(url === '/assets/images/star.png'){
+    else if(url === '/public/assets/images/star.png'){
         console.log('star image found'); 
         res.writeHead(200, {'content-type':'image/png'});
         res.write(starPhoto);
@@ -63,3 +73,5 @@ const server = http.createServer((req, res) => {
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
+
+*/

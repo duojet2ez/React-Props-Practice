@@ -17,7 +17,7 @@ export default function Card(props){
             {badgeText && <div className="card--badge"> {badgeText} </div>}
             <img src={itemData.coverImg}></img>
             <div className="card--stats">
-                <img src="../assets/images/star.png" className="card--star"></img>
+                <img src="/assets/images/star.png" className="card--star"></img>
                 <span>{itemData.stats.rating}</span>
                 <span className="gray">({itemData.stats.reviewCount}) • </span>
                 <span className="gray">{itemData.location}</span>
